@@ -161,21 +161,9 @@ body {
   color: var(--green);
   position: absolute;
   font-size: var(--size-300);
-  animation: revealUP 800ms ease-out forwards alternate;
+  animation: revealUP 350ms ease-out forwards alternate;
 }
-@keyframes revealUP {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
+
 @media (max-width: 25em) {
   .title {
     font-size: var(--size-600);
@@ -203,8 +191,21 @@ body {
   font-size: var(--size-300);
   font-weight: var(--fw-700);
   transition: var(--transtion-300ms);
+  animation: revealUP 350ms ease-out forwards alternate;
 }
-
+@keyframes revealUP {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 /* Strength Pills */
 
 .strength {
