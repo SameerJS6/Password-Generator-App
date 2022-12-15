@@ -36,7 +36,9 @@
     --orange: hsl(13, 95%, 66%);
     --yellow: hsl(42, 91%, 68%);
 }
-
+.none {
+  display: none;
+}
 /* CSS Reset  */
 
 /* Box sizing rules */
@@ -128,15 +130,79 @@ body {
 /* Title  */
 .title {
   text-align: center;
-  margin-block-end: 1rem;
   color: var(--light-gray);
   font-weight: var(--fw-800);
 }
 .container {
   z-index: 10;
+  padding: 1rem;
   color: white;
   /* backdrop-filter: blur(1px); */
+}
+.main-container {
+  padding: 1rem;
   background-color: var(--dark-gray);
+}
+/* Display Wrapper  */
+
+.display-wrapper {
+  position: relative;
+  display: flex;
+  padding: 1rem;
+  margin-block: 1rem;
+  align-items: center;
+  border-radius: 0.25rem;
+  justify-content: space-between;
+  background-color: var(--dark-gray);
+  transition: var(--transtion-300ms);
+}
+.copy-message {
+  right: 45px;
+  color: var(--green);
+  position: absolute;
+  font-size: var(--size-300);
+  animation: revealUP 800ms ease-out forwards alternate;
+}
+@keyframes revealUP {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@media (max-width: 25em) {
+  .title {
+    font-size: var(--size-600);
+  }
+  .display-wrapper {
+    margin-block-start: 0;
+  }
+} 
+@media (min-width: 28em) {
+  .copy-message {
+    right: 55px;
+    font-size: var(--size-400);
+  }
+}
+.copy-btn {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: var(--transtion-300ms);
+}
+/* Error Message  */
+.error {
+  color: var(--red);
+  text-align: center;
+  font-size: var(--size-300);
+  font-weight: var(--fw-700);
+  transition: var(--transtion-300ms);
 }
 
 /* Strength Pills */
@@ -171,6 +237,7 @@ body {
 
 .btn {
   width: 100%;
+  border: none;
   padding: 1rem;
   cursor: pointer;
   border-radius: 0.25rem;
