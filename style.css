@@ -12,8 +12,8 @@
 
     --ff-primary: 'JetBrains Mono', monospace;
 
-    --transtion-30ms: all .5s ease;
-    --transtion-1s: all 1s ease;
+    --transtion-300ms: all 300ms ease;
+    --transtion-200ms: all 200ms ease;
 
     --size-300: 0.8125rem;
     --size-400: 1rem;
@@ -121,12 +121,66 @@ body {
     display: grid;
     place-content: center;
     font-family: var(--ff-primary);
-    transition: var(--transtion-1s);
+    transition: var(--transtion-300ms);
     background-color: var(--almost-black);
+}
+
+/* Title  */
+.title {
+  text-align: center;
+  margin-block-end: 1rem;
+  color: var(--light-gray);
+  font-weight: var(--fw-800);
 }
 .container {
   z-index: 10;
   color: white;
-  backdrop-filter: blur(1px);
-  background-color: hsl(248, 10%, 15%, 0.2);
+  /* backdrop-filter: blur(1px); */
+  background-color: var(--dark-gray);
+}
+
+/* Strength Pills */
+
+.strength {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 0.25rem;
+  margin-block: 1rem 1.5rem;
+  justify-content: space-between;
+  transition: var(--transtion-300ms);
+  background-color: var(--almost-black);
+}
+.strength p {
+  color: var(--light-gray);
+  font-size: var(--size-300);
+  font-weight: var(--fw-800);
+}
+.strength-pills {
+  display: flex;
+}
+.strength-pills > div {
+  width: 7px;
+  height: 17px;
+  margin-inline-end: .5rem;
+  transition: var(--transtion-200ms);
+  border: 1px solid var(--almost-white); 
+}
+
+/* Generate Button  */
+
+.btn {
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  font-size: var(--size-300);
+  font-weight: var(--fw-800);
+  color: var(--almost-black);
+  background-color: var(--green);
+  transition: var(--transtion-300ms);
+}
+.btn:hover {
+  transform: translateY(-1px);
+  background-color:hsl(127, 100%, 62%)
 }
