@@ -184,6 +184,27 @@ body {
   background-color: transparent;
   transition: var(--transtion-300ms);
 }
+@media (hover:hover) {
+  .copy-btn:hover + .onmouse-message {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.onmouse-message {
+  position: absolute;
+  right: 0;
+  top: -45px;
+  font-size: 0.65rem;
+  background-color:hsl(127, 100%, 82%);
+  color: var(--almost-black);
+  border-radius: 0.25rem;
+  transition: var(--transtion-300ms);
+  font-weight: var(--fw-700);
+  padding: 0.25rem 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
 /* Error Message  */
 .error {
   color: var(--red);
