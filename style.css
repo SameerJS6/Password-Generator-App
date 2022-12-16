@@ -171,6 +171,7 @@ main {
 .main-container {
   width: 100%;
   padding: 1rem;
+  border-radius: 0.35rem;
   background-color: var(--dark-gray);
 }
 
@@ -181,7 +182,7 @@ main {
   padding: 1rem;
   margin-block: 1rem;
   align-items: center;
-  border-radius: 0.25rem;
+  border-radius: 0.35rem;
   justify-content: space-between;
   background-color: var(--dark-gray);
   transition: var(--transtion-300ms);
