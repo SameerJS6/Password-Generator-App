@@ -16,6 +16,7 @@
     --transtion-200ms: all 200ms ease;
 
     --size-300: 0.8125rem;
+    --size-350: 0.9rem;
     --size-400: 1rem;
     --size-500: 1.25rem;
     --size-600: 1.5rem;
@@ -39,6 +40,7 @@
 .none {
   display: none;
 }
+
 /* CSS Reset  */
 
 /* Box sizing rules */
@@ -120,31 +122,59 @@ select {
 
 /* General Styling  */
 body {
-    display: grid;
-    place-content: center;
-    font-family: var(--ff-primary);
-    transition: var(--transtion-300ms);
-    background-color: var(--almost-black);
+  display: grid;
+  place-content: center;
+  font-family: var(--ff-primary);
+  transition: var(--transtion-300ms);
+  background-color: var(--almost-black);
 }
 
 /* Title  */
 .title {
+  z-index: 5;
   text-align: center;
   color: var(--light-gray);
   font-weight: var(--fw-800);
+  margin-block-start: 1rem;
 }
-.container {
+main {
+  width: 100%;
   z-index: 10;
   padding: 1rem;
-  color: white;
-  /* backdrop-filter: blur(1px); */
+  color: var(--almost-white);
+}
+@media (max-width: 19em) {
+  main {
+    width: 260px;
+  }
+}
+@media (min-width: 20em) {
+  main {
+    width: 300px;
+  }
+}
+@media (min-width: 24em) {
+  main {
+    width: 400px;
+  }
+}
+@media (min-width: 45em) {
+  main {
+    width: 500px;
+  }
+}
+@media (min-width: 87em) {
+  main {
+    width: 600px;
+  }
 }
 .main-container {
+  width: 100%;
   padding: 1rem;
   background-color: var(--dark-gray);
 }
-/* Display Wrapper  */
 
+/* Display Wrapper  */
 .display-wrapper {
   position: relative;
   display: flex;
@@ -156,6 +186,10 @@ body {
   background-color: var(--dark-gray);
   transition: var(--transtion-300ms);
 }
+.display-box {
+  width: 100%;
+  word-break: break-all;
+}
 .copy-message {
   right: 45px;
   color: var(--green);
@@ -166,7 +200,7 @@ body {
 
 @media (max-width: 25em) {
   .title {
-    font-size: var(--size-600);
+    font-size: var(--size-500);
   }
   .display-wrapper {
     margin-block-start: 0;
@@ -205,6 +239,39 @@ body {
   pointer-events: none;
   transform: translateY(10px);
 }
+
+/* Main-Container  */
+.title-label {
+  display: flex;
+  font-size: var(--size-350);
+  justify-content: space-between;
+}
+.title-label p {
+  color: var(--green);
+  font-size: var(--size-600);
+  font-weight: var(--fw-700);
+  transition: var(--transtion-300ms);
+}
+/* Inputs */
+.RangeInput {
+  width: 100%;
+  margin-block: 0.25rem 1rem;
+  transition: var(--transtion-300ms);
+}
+
+.input-wrapper {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.input-sub-wrapper label {
+  font-size: var(--size-300);
+  font-weight: var(--fw-600);
+  transition: var(--transtion-300ms);
+}
+.input-sub-wrapper > input:checked + label {
+  color: var(--green);
+}
 /* Error Message  */
 .error {
   color: var(--red);
@@ -227,8 +294,8 @@ body {
     transform: translateY(0px);
   }
 }
-/* Strength Pills */
 
+/* Strength Pills */
 .strength {
   display: flex;
   align-items: center;
@@ -239,16 +306,28 @@ body {
   transition: var(--transtion-300ms);
   background-color: var(--almost-black);
 }
-.strength p {
+.strength > p {
   color: var(--light-gray);
   font-size: var(--size-300);
   font-weight: var(--fw-800);
+}
+.strength-wrapper {
+  gap: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+.strength-message {
+  text-transform: uppercase;
+  font-size: var(--size-400);
+  font-weight: var(--fw-700);
+  color: var(--almost-white);
+  transition: var(--transtion-300ms);
 }
 .strength-pills {
   display: flex;
 }
 .strength-pills > div {
-  width: 7px;
+  width: 8px;
   height: 17px;
   margin-inline-end: .5rem;
   transition: var(--transtion-200ms);
@@ -257,7 +336,8 @@ body {
 
 /* Generate Button  */
 
-.btn {
+.btn,
+.btn-reset {
   width: 100%;
   border: none;
   padding: 1rem;
@@ -272,4 +352,34 @@ body {
 .btn:hover {
   transform: translateY(-1px);
   background-color:hsl(127, 100%, 62%)
+}
+.btn-reset {
+  color: var(--green);
+  border-radius: 0.25rem;
+  margin-block-start: .5rem;
+  border: 2px solid transparent;
+  background-color: transparent;
+  transition: var(--transtion-300ms);
+}
+.btn-reset:hover {
+  border-color: var(--green);
+}
+
+
+/* Reusable Classes  */
+.bg-red {
+  --almost-white: var(--red);
+  background-color: var(--red);
+}
+.bg-orange {
+  --almost-white: var(--orange);
+  background-color: var(--orange);
+}
+.bg-yellow {
+  --almost-white: var(--yellow);
+  background-color: var(--yellow);
+}
+.bg-green {
+  --almost-white: var(--green);
+  background-color: var(--green);
 }

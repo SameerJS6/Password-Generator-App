@@ -31,10 +31,12 @@
 
 <!-- Main Content Starts  -->
 <h2 class="title">Password Generator</h2>
-<div class="container">
+<main>
     <!-- Display Container  -->
     <div class="display-wrapper">
-        <p data-password-value>P4$5W0rD!</p>
+        <div class="display-box">
+            <p data-password-value>P4$5W0rD!JSDKHJH</p>
+        </div>
         <button data-copy class="copy-btn">
             <!-- Copy Mark SVG  -->
             <svg width="21" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -55,19 +57,29 @@
             <p>10</p>
         </div>
         <form action="">
-            <input type="range" min="1" max="25" id="InputNumberRange">
+            <input class="RangeInput" type="range" min="1" max="25" id="InputNumberRange">
 
-            <label for="IncludeUppercase">Include Uppercase Letters</label>
-            <input type="checkbox" id="IncludeUppercase">
+            <div class="input-wrapper">
+                <div class="input-sub-wrapper">
+                    <input type="checkbox" id="IncludeUppercase">
+                    <label for="IncludeUppercase">Include Uppercase Letters</label>
+                </div>
 
-            <label for="InputLowercase">Include Lowercase Letters</label>
-            <input type="checkbox" id="IncludeLowercase">
+                <div class="input-sub-wrapper">
+                    <input type="checkbox" id="IncludeLowercase">
+                    <label for="InputLowercase">Include Lowercase Letters</label>
+                </div>
 
-            <label for="InputNumbers">Include Numbers</label>
-            <input type="checkbox" id="IncludeNumbers">
+                <div class="input-sub-wrapper">
+                    <input type="checkbox" id="IncludeNumbers">
+                    <label for="InputNumbers">Include Numbers</label>
+                </div>
 
-            <label for="InputUppercase">Include Symbols</label>
-            <input type="checkbox" id="IncludeSymbols">
+                <div class="input-sub-wrapper">
+                    <input type="checkbox" id="IncludeSymbols">
+                    <label for="InputUppercase">Include Symbols</label>
+                </div>
+            </div>
 
             <div data-error-message class="error none">
                 <p>Please select a checkbox above</p>
@@ -75,11 +87,15 @@
 
             <div class="strength">
                 <p>STRENGTH</p>
-                <div class="strength-pills">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div class="strength-wrapper">
+                    <p class="strength-message" data-strength-message
+                    >weak</p>
+                    <div class="strength-pills">
+                        <div data-strength-1 class="bg-green"></div>
+                        <div data-strength-2 class="bg-green"></div>
+                        <div data-strength-3 class="bg-green"></div>
+                        <div data-strength-4 class="bg-green"></div>
+                    </div>
                 </div>
             </div>
 
@@ -89,9 +105,11 @@
                     <path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/>
                 </svg>
             </button>
+
+            <button type="reset" class="btn-reset">Reset</button>
         </form>
     </div>
-</div>
+</main>
 
 </body>
 </html>
