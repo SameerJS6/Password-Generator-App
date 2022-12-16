@@ -248,9 +248,12 @@ main {
   justify-content: space-between;
 }
 .title-label p {
-  color: var(--green);
-  font-size: var(--size-600);
+  border-radius: 50%;
+  background: var(--green);
+  padding: 0.25rem 0.37rem;
+  font-size: var(--size-500);
   font-weight: var(--fw-700);
+  color: var(--almost-black);
   transition: var(--transtion-300ms);
 }
 /* Inputs */
