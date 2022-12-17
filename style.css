@@ -194,11 +194,11 @@ main {
 .display-wrapper {
   position: relative;
   display: flex;
-  padding: 0.5rem 0.5rem 0.5rem 1em;
   margin-block: 1rem;
   align-items: center;
   border-radius: 0.35rem;
   justify-content: space-between;
+  padding: 0.5rem 0.5rem 0.5rem 1em;
   background-color: var(--dark-gray);
   transition: var(--transtion-300ms);
 }
@@ -345,6 +345,11 @@ main {
   justify-content: space-between;
   transition: var(--transtion-300ms);
   background-color: var(--almost-black);
+}
+@media (max-width: 25em) {
+  .strength {
+    padding: 1rem;
+  }
 }
 .strength > p {
   color: var(--light-gray);
@@ -538,3 +543,32 @@ input[type=checkbox]:checked {
   color: var(--almost-black);
   border: none;
 } 
+
+
+/* Media Quire */
+@media (min-width: 60em) {
+  .display-wrapper {
+    margin-block: 0.5rem 1rem;
+    padding: 0.8rem 0.8rem 0.8rem 1.3rem;
+  }
+  .display-box p {
+    font-size: var(--size-600);
+  }
+  .title-label {
+    font-size: var(--size-500);
+  }
+  .input-sub-wrapper label {
+    font-size: var(--size-400)
+  }
+  .error {
+    margin-block: 0.7rem 1rem;
+    font-size: var(--size-400);
+  }
+  .strength > p {
+    font-size: var(--size-400);
+  }
+  .btn,
+  .btn-reset {
+    font-size: var(--size-350);
+  }
+}
