@@ -16,12 +16,76 @@ const Weak = document.querySelector("[data-weak]");
 const Medium = document.querySelector("[data-medium]");
 const Strong = document.querySelector("[data-strong]");
 
+const WeakAll = document.querySelectorAll(".weak");
+const MediumAll = document.querySelectorAll(".medium");
+const StrongAll = document.querySelectorAll(".strong");
+const StrengthMessage = document.querySelector('[data-strength-message]');
+
+const SubmitButton = document.querySelector('[data-submit-btn]');
+
+let value;
+value = RangeInput.value;
+
 // Range Display 
 RangeInput.oninput = function() {
-    let value;
     value = RangeInput.value;
     RangeDisplay.innerText = value;
+
+    if(value <= 6) {
+        StrengthMessage.innerHTML = 'too weak'
+        TooWeak.classList.add('bg-red');
+
+        WeakAll.forEach((weak) => {
+            weak.classList.remove('bg-orange')
+        })
+        // TooWeak.classList.remove('bg-orange')
+        // Weak.classList.remove('bg-orange');
+    } else if (value <= 10) {
+        StrengthMessage.innerHTML = 'weak';
+        WeakAll.forEach((weak) => {
+            weak.classList.add('bg-orange');
+        })
+        
+        MediumAll.forEach((medium) => {
+            medium.classList.remove('bg-yellow')
+        })
+        // TooWeak.classList.add('bg-orange');
+        // Weak.classList.add('bg-orange');
+
+        // TooWeak.classList.remove('bg-yellow');
+        // Weak.classList.remove('bg-yellow');
+        // Medium.classList.remove('bg-yellow');
+    } else if(value <=15) {
+        StrengthMessage.innerHTML = 'medium';
+        MediumAll.forEach((medium) => {
+            medium.classList.add('bg-yellow');
+        })
+        
+        StrongAll.forEach((strong) => {
+            strong.classList.remove('bg-green')
+        })
+        
+        // TooWeak.classList.add('bg-yellow');
+        // Weak.classList.add('bg-yellow');
+        // Medium.classList.add('bg-yellow');
+
+        // TooWeak.classList.remove('bg-green');
+        // Weak.classList.remove('bg-green');
+        // Medium.classList.remove('bg-green');
+        // Strong.classList.remove('bg-green');
+    } else if(value > 16) {
+        StrengthMessage.innerHTML = 'strong';
+        StrongAll.forEach((strong) => {
+            strong.classList.add('bg-green')
+        })
+
+        // TooWeak.classList.add('bg-green');
+        // Weak.classList.add('bg-green');
+        // Medium.classList.add('bg-green');
+        // Strong.classList.add('bg-green')
+    }
 }
+
 
 // Slider Progress Bar Color Calculation Function 
 setBackgroundSize(input);
