@@ -41,7 +41,20 @@
 .none {
   display: none;
 }
-
+.revealUp {
+  animation: revealUP 200ms ease-in;
+}
+.opacity {
+  animation: opacity 500ms ease;
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* CSS Reset  */
 
 /* Box sizing rules */
@@ -181,7 +194,7 @@ main {
 .display-wrapper {
   position: relative;
   display: flex;
-  padding: 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1em;
   margin-block: 1rem;
   align-items: center;
   border-radius: 0.35rem;
@@ -193,10 +206,16 @@ main {
   width: 100%;
   word-break: break-all;
 }
+.display-box p {
+  color: var(--light-gray);
+  font-size: var(--size-500);
+  font-weight: var(--fw-800);
+  transition: var(--transtion-300ms);
+}
 .copy-message {
   right: 45px;
-  color: var(--green);
   position: absolute;
+  color: var(--green);
   font-size: var(--size-300);
   animation: revealUP 350ms ease-out forwards alternate;
 }
@@ -209,6 +228,13 @@ main {
     margin-block-start: 0;
   }
 } 
+@media (min-width: 25em) {
+  .copy-message {
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;  
+    background-color: var(--dark-gray);
+  }
+}
 @media (min-width: 28em) {
   .copy-message {
     right: 55px;
@@ -218,15 +244,12 @@ main {
 .copy-btn {
   border: none;
   cursor: pointer;
+  border-radius: 50%;
+  padding: 0.25rem 0.5rem;
   background-color: transparent;
   transition: var(--transtion-300ms);
 }
-@media (hover:hover) {
-  .copy-btn:hover + .onmouse-message {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 .onmouse-message {
   position: absolute;
   right: 0;
@@ -261,14 +284,18 @@ main {
 /* Inputs */
 .RangeInput {
   width: 100%;
-  margin-block: 0.25rem 1rem;
+  margin-block: 0.25rem 1.5rem;
   transition: var(--transtion-300ms);
 }
-
 .input-wrapper {
   gap: 0.5rem;
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 25em) {
+  .input-wrapper {
+    margin-inline-start: 0.5rem;
+  }
 }
 .input-sub-wrapper {
   gap: 0.8rem;
@@ -287,8 +314,10 @@ main {
 .error {
   color: var(--red);
   text-align: center;
+  /* visibility: hidden; */
   font-size: var(--size-300);
   font-weight: var(--fw-700);
+  margin-block: 0.5rem 0.8rem;
   transition: var(--transtion-300ms);
   animation: revealUP 350ms ease-out forwards alternate;
 }
@@ -311,8 +340,8 @@ main {
   display: flex;
   align-items: center;
   padding: 1rem 1.5rem;
+  margin-block: 0rem 1.5rem;
   border-radius: 0.25rem;
-  margin-block: 1rem 1.5rem;
   justify-content: space-between;
   transition: var(--transtion-300ms);
   background-color: var(--almost-black);
@@ -360,10 +389,7 @@ main {
   background-color: var(--green);
   transition: var(--transtion-300ms);
 }
-.btn:hover {
-  transform: translateY(-1px);
-  background-color:hsl(127, 100%, 62%)
-}
+
 .btn-reset {
   color: var(--green);
   border-radius: 0.25rem;
@@ -372,10 +398,23 @@ main {
   background-color: transparent;
   transition: var(--transtion-300ms);
 }
-.btn-reset:hover {
-  border-color: var(--green);
+/* Hover States  */
+@media (hover:hover) {
+  .copy-btn:hover + .onmouse-message {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .copy-btn:hover {
+    transform: scale(1.09) translateY(-2px);
+  }
+  .btn:hover {
+    transform: scale(1.03);
+    background-color:hsl(127, 100%, 72%)
+  }
+  .btn-reset:hover {
+    border-color: var(--green);
+  }
 }
-
 
 /* Reusable Classes  */
 .bg-red {
@@ -412,8 +451,8 @@ input[type='range']::-webkit-slider-runnable-track {
   background: linear-gradient(to right, var(--green), var(--green)), var(--almost-black);
   background-size: var(--background-size, 0%) 100%;
   background-repeat: no-repeat;
+  border-radius: 1rem;
   height: 0.5rem;
-  border-radius: 15px;
 }
 /* For Chrome, Safari Browsers */
 input[type=range]::-webkit-slider-thumb {
