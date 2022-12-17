@@ -548,6 +548,31 @@ input[type=checkbox]:checked {
   border: none;
 } 
 
+/* Ripple Effect */
+.ripples {
+  position: relative;
+  overflow: hidden;
+}
+span {
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  animation: animate 0.5s linear;
+  background: var(--almost-white);
+  transform: translate(-50%, -50%);
+}
+@keyframes animate {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.3;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
 
 /* Media Quire */
 @media (min-width: 60em) {

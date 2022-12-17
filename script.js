@@ -87,7 +87,7 @@ RangeInput.oninput = function() {
         })
     } else if(value > 16) {
         StrengthMessage.innerHTML = 'strong';
-        
+
         StrongAll.forEach((strong) => {
             strong.classList.add('bg-green')
         })
@@ -133,3 +133,22 @@ function CopyFunction() {
 SubmitButton.addEventListener('click', ()=> {
     
 })
+
+// Ripple Effect 
+const Ripple = document.querySelectorAll('.ripples');
+
+Ripple.forEach((ripple) => {
+    ripple.addEventListener('click', function (e) {
+        let x = e.clientx - e.target.offsetLeft;
+        let y = e.clienty - e.target.offsetTop;
+
+        let Ripples = document.createElement('span');
+        Ripples.style.left = x + "px";
+        Ripples.style.top = y + 'px';
+        this.appendChild(Ripples);
+
+        setTimeout(() => {
+            Ripples.remove();
+        }, 10000);
+    });
+});
