@@ -270,6 +270,11 @@ main {
   display: flex;
   flex-direction: column;
 }
+.input-sub-wrapper {
+  gap: 0.8rem;
+  display: flex;
+  align-items: center;
+}
 .input-sub-wrapper label {
   font-size: var(--size-300);
   font-weight: var(--fw-600);
@@ -394,6 +399,7 @@ main {
 input[type=range] {
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   height: 4px;
   width: 100%;
   border: none;
@@ -412,6 +418,7 @@ input[type='range']::-webkit-slider-runnable-track {
 /* For Chrome, Safari Browsers */
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   height: 20px;
   width: 20px;
   cursor: pointer;
@@ -440,6 +447,7 @@ input[type='range']::-moz-range-progress {
 
 input[type='range']::-moz-range-thumb {
   -moz-appearance: none;
+  appearance: none;
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -457,6 +465,37 @@ input[type=range]::-moz-range-thumb:active {
 }
 
 /* Input Checkbox  */
+input[type=checkbox] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  outline: 0;
+  cursor: pointer;
+  background: transparent;
+  transition: var(--transtion-300ms);
+  border: 2px solid var(--almost-white);
+}
+input[type=checkbox]:hover {
+  border-color: var(--checkbox-green);
+}
+input[type=checkbox]::after {
+  content: ' ';
+  position: relative;
+  left: 35%;
+  top: 13%;
+  width: 30%;
+  height: 60%;
+  border: solid var(--dark-gray);
+  border-width: 0 3px 3px 0;
+  transform: rotate(40deg);
+  display: none;
+}
+input[type=checkbox]:checked::after {
+  display: block;
+}
 input[type=checkbox]:checked {
-  accent-color: var(--checkbox-green);
+  background-color: var(--checkbox-green);
+  color: var(--almost-black);
+  border: none;
 } 
