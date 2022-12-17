@@ -85,7 +85,7 @@ RangeInput.oninput = function() {
         StrongAll.forEach((strong) => {
             strong.classList.remove('bg-green')
         })
-    } else if(value > 16) {
+    } else if(value => 16) {
         StrengthMessage.innerHTML = 'strong';
 
         StrongAll.forEach((strong) => {
