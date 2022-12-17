@@ -301,6 +301,7 @@ main {
   gap: 0.8rem;
   display: flex;
   align-items: center;
+  transition: var(--transtion-200ms);
 }
 .input-sub-wrapper label {
   font-size: var(--size-300);
@@ -411,6 +412,9 @@ main {
   }
   .copy-btn:hover {
     transform: scale(1.09) translateY(-2px);
+  }
+  .input-sub-wrapper:hover {
+    transform: translateY(-2px);
   }
   .btn:hover {
     transform: scale(1.03);
