@@ -557,11 +557,11 @@ span {
   border-radius: 50%;
   position: absolute;
   pointer-events: none;
-  animation: animate 0.5s linear;
+  animation: animate-1 0.5s linear;
   background: var(--almost-white);
   transform: translate(-50%, -50%);
 }
-@keyframes animate {
+@keyframes animate-1 {
   0% {
     width: 0px;
     height: 0px;
