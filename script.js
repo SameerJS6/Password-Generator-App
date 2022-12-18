@@ -21,10 +21,66 @@ const MediumAll = document.querySelectorAll(".medium");
 const StrongAll = document.querySelectorAll(".strong");
 const StrengthMessage = document.querySelector('[data-strength-message]');
 
+const Form = document.querySelector('[data-form]');
+const IncludeUppercaseElement = document.getElementById('IncludeUppercase');
+const IncludeLowercaseElement = document.getElementById('IncludeLowercase');
+const IncludeNumbersElement = document.getElementById('IncludeNumbers');
+const IncludeSymbolsElement = document.getElementById('IncludeSymbols');
+
 const SubmitButton = document.querySelector('[data-submit-btn]');
+
 
 let value;
 value = RangeInput.value;
+
+// ASCII CHAR CODES FOR PASSWORD COMBINATION ARRAYS
+const UPPERCASE_CODES = ArrayFromLowToHigh(65, 90);
+const LOWERCASE_CODES = ArrayFromLowToHigh(97, 122);
+const NUMBER_CODES = ArrayFromLowToHigh(48, 57);
+const SYMBOL_CODES = ArrayFromLowToHigh(33, 47)
+  .concat(ArrayFromLowToHigh(58, 64))
+  .concat(ArrayFromLowToHigh(91, 96))
+  .concat(ArrayFromLowToHigh(123, 126));
+
+// Form Event Listener 
+Form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const CharacterAmount = value;
+    const includeUppercase = IncludeUppercaseElement.checked
+    const includeLowercase = IncludeLowercaseElement.checked
+    const includeNumbers = IncludeNumbersElement.checked
+    const includeSymbols = IncludeSymbolsElement.checked
+
+    const Password = GeneratePassword(CharacterAmount, includeUppercase, includeLowercase, includeNumbers, includeSymbols)
+
+    PasswordValue.innerText = Password
+})
+
+// Function to Combine all Character data to form an password 
+function GeneratePassword(CharacterAmount, includeUppercase, includeLowercase, includeNumbers, includeSymbols) {
+    let charCodes = [];
+    if(includeLowercase) charCodes = LOWERCASE_CODES
+    if(includeUppercase) charCodes = charCodes.concat(UPPERCASE_CODES);
+    if(includeNumbers) charCodes = charCodes.concat(NUMBER_CODES);
+    if(includeSymbols) charCodes = charCodes.concat(SYMBOL_CODES);
+
+    const PasswordElements = []
+    for(let i = 0; i < CharacterAmount; i++) {
+        const CharacterCodes = charCodes[Math.floor(Math.random() * charCodes.length)]
+        PasswordElements.push(String.fromCharCode(CharacterCodes));
+    }
+    return PasswordElements.join('');
+}
+
+// Function to Generate Array which contains ASCII Codes
+function ArrayFromLowToHigh(low, high) {
+    const Array = [];
+    for(let i = low; i <= high; i++) {
+        Array.push(i)
+    }
+    return Array
+} 
 
 // Range Display 
 RangeInput.oninput = function() {
@@ -129,10 +185,6 @@ function CopyFunction() {
     }, 1000);   
 }
 
-// Submit Button 
-SubmitButton.addEventListener('click', ()=> {
-    
-})
 
 // Ripple Effect 
 const Ripple = document.querySelectorAll('.ripples');
