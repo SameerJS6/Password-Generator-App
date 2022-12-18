@@ -432,9 +432,17 @@ main {
   .btn-reset:hover {
     border-color: var(--green);
   }
+  input[type=range]::-webkit-slider-thumb:hover,
+  input[type=range]::-webkit-slider-thumb:active {
+  transform: scale(1.05) translateY(-1px);
+  }
+  input[type='range']::-moz-range-thumb:hover,
+  input[type=range]::-moz-range-thumb:active {
+  transform: scale(1.05) translateY(-1px);
+  }
 }
 
-/* Reusable Classes  */
+/* Utility Classes  */
 .bg-red {
   --almost-white: var(--red);
   background-color: var(--red);
@@ -482,13 +490,13 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 50%;
   background: var(--green);
   margin-block-start: -0.5rem;
-  border: 2px solid var(--green);
+  border: 1.5px solid var(--green);
   transition: var(--transtion-200ms);
 }
 input[type=range]::-webkit-slider-thumb:hover,
 input[type=range]::-webkit-slider-thumb:active {
   background-color: var(--almost-black);
-  border: 2px solid var(--checkbox-green);
+  border: 1.5px solid var(--checkbox-green);
 }
 
 /* For Mozilla Browser  */
@@ -510,7 +518,7 @@ input[type='range']::-moz-range-thumb {
   cursor: pointer;
   border-radius: 50%;
   margin-block-start: -0.5rem;
-  border: 2px solid var(--green);
+  border: 1.5px solid var(--green);
   transition: var(--transtion-200ms);
   background-color: var(--almost-white);
 }
@@ -518,7 +526,7 @@ input[type='range']::-moz-range-thumb {
 input[type='range']::-moz-range-thumb:hover,
 input[type=range]::-moz-range-thumb:active {
   background-color: var(--almost-black);
-  border: 2px solid var(--green);
+  border: 1.5px solid var(--green);
 }
 
 /* Input Checkbox  */
