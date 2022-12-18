@@ -212,6 +212,25 @@ RangeInput.oninput = function() {
     }
 }
 
+// Reset Button 
+ResetButton.addEventListener("click", ()=> {
+    ResetAll();
+})
+
+function ResetAll() {
+    RangeInput.value = 0;
+    RangeDisplay.innerText = 0;
+    console.log(RangeInput.value);
+    StrengthMessage.innerHTML = '';
+    ErrorMessage.style.visibility = 'hidden';
+    PasswordValue.innerText = 'P4$5W0rD!JSgT'
+    PasswordValue.style.color = 'var(--light-gray)';
+    input.style.setProperty("--background-size", `0%`);
+    Allbar.forEach((all) => {
+        all.classList.add('no-bg');
+    })
+}
+
 // Ripple Effect 
 const Ripple = document.querySelectorAll('.ripples');
 
@@ -231,21 +250,3 @@ Ripple.forEach((ripple) => {
     });
 });
 
-// Reset Button 
-ResetButton.addEventListener("click", ()=> {
-    ResetAll();
-})
-
-function ResetAll() {
-    RangeInput.value = 0;
-    RangeDisplay.innerText = 0;
-    console.log(RangeInput.value);
-    StrengthMessage.innerHTML = '';
-    ErrorMessage.style.visibility = 'hidden';
-    PasswordValue.innerText = 'P4$5W0rD!JSgT'
-    PasswordValue.style.color = 'var(--light-gray)';
-    input.style.setProperty("--background-size", `0%`);
-    Allbar.forEach((all) => {
-        all.classList.add('no-bg');
-    })
-}
