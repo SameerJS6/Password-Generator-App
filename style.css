@@ -1,68 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&display=swap');
 
 :root {
-    --dark-gray: hsl(248, 10%, 15%);
-    --light-gray: hsl(251, 9%, 53%);
-    --almost-white: hsl(252, 11%, 91%);
-    --almost-black: hsl(248, 15%, 11%);
-    --green: hsl(127, 100%, 82%);
-    --checkbox-green: hsl(127, 100%, 72%);
-    --red: hsl(0, 91%, 63%);
-    --orange: hsl(13, 95%, 66%);
-    --yellow: hsl(42, 91%, 68%);
+  --dark-gray: hsl(248, 10%, 15%);
+  --light-gray: hsl(251, 9%, 53%);
+  --almost-white: hsl(252, 11%, 91%);
+  --almost-black: hsl(248, 15%, 11%);
+  --green: hsl(127, 100%, 82%);
+  --checkbox-green: hsl(127, 100%, 72%);
+  --red: hsl(0, 91%, 63%);
+  --orange: hsl(13, 95%, 66%);
+  --yellow: hsl(42, 91%, 68%);
 
-    --ff-primary: 'JetBrains Mono', monospace;
+  --ff-primary: 'JetBrains Mono', monospace;
 
-    --transtion-300ms: all 300ms ease;
-    --transtion-200ms: all 200ms ease;
+  --transtion-300ms: all 300ms ease;
+  --transtion-200ms: all 200ms ease;
 
-    --size-300: 0.8125rem;
-    --size-350: 0.9rem;
-    --size-400: 1rem;
-    --size-500: 1.25rem;
-    --size-600: 1.5rem;
+  --size-300: 0.8125rem;
+  --size-350: 0.9rem;
+  --size-400: 1rem;
+  --size-500: 1.25rem;
+  --size-600: 1.5rem;
 
-    --fw-400: 400;
-    --fw-600: 600;
-    --fw-700: 700;
-    --fw-800: 800;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
 }
 
 .DarkMode {
-    --dark-gray: hsl(248, 10%, 15%);
-    --light-gray: hsl(251, 9%, 53%);
-    --almost-white: hsl(252, 11%, 91%);
-    --almost-black: hsl(248, 15%, 11%);
-    --green: hsl(127, 100%, 82%);
-    --red: hsl(0, 91%, 63%);
-    --orange: hsl(13, 95%, 66%);
-    --yellow: hsl(42, 91%, 68%);
+  --dark-gray: hsl(248, 10%, 15%);
+  --light-gray: hsl(251, 9%, 53%);
+  --almost-white: hsl(252, 11%, 91%);
+  --almost-black: hsl(248, 15%, 11%);
+  --green: hsl(127, 100%, 82%);
+  --red: hsl(0, 91%, 63%);
+  --orange: hsl(13, 95%, 66%);
+  --yellow: hsl(42, 91%, 68%);
 }
+
 .none {
   display: none;
 }
+
 .revealUp {
   animation: revealUP 200ms ease-in;
 }
+
 .opacity {
   animation: opacity 500ms ease;
 }
+
 @keyframes opacity {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 /* CSS Reset  */
 
 /* Box sizing rules */
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0 ;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -121,9 +127,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -159,41 +165,49 @@ main {
   padding: 1rem;
   color: var(--almost-white);
 }
+
 @media (max-width: 19em) {
   main {
     width: 260px;
   }
 }
+
 @media (min-width: 20em) {
   main {
     width: 315px;
   }
-} 
- @media (min-width: 23.3em) {
+}
+
+@media (min-width: 23.3em) {
   main {
     width: 370px;
   }
 }
- @media (min-width: 25em) {
+
+@media (min-width: 25em) {
   main {
     width: 400px;
   }
 }
+
 @media (min-width: 31em) {
   main {
     width: 500px;
   }
 }
+
 @media (min-width: 45em) {
   main {
     width: 500px;
   }
 }
+
 @media (min-width: 87em) {
   main {
     width: 600px;
   }
 }
+
 .main-container {
   width: 100%;
   padding: 1rem;
@@ -213,10 +227,12 @@ main {
   background-color: var(--dark-gray);
   transition: var(--transtion-300ms);
 }
+
 .display-box {
   width: 100%;
   word-break: break-all;
 }
+
 .display-box p {
   color: var(--light-gray);
   /* color: var(--almost-white); */
@@ -224,6 +240,7 @@ main {
   font-weight: var(--fw-800);
   transition: var(--transtion-300ms);
 }
+
 .copy-message {
   right: 45px;
   position: absolute;
@@ -236,23 +253,27 @@ main {
   .title {
     font-size: var(--size-500);
   }
+
   .display-wrapper {
     margin-block-start: 0;
   }
-} 
+}
+
 @media (min-width: 25em) {
   .copy-message {
     border-radius: 0.25rem;
-    padding: 0.25rem 0.5rem;  
+    padding: 0.25rem 0.5rem;
     background-color: var(--dark-gray);
   }
 }
+
 @media (min-width: 28em) {
   .copy-message {
     right: 55px;
     font-size: var(--size-400);
   }
 }
+
 .copy-btn {
   border: none;
   cursor: pointer;
@@ -267,7 +288,7 @@ main {
   right: 0;
   top: -45px;
   font-size: 0.65rem;
-  background-color:hsl(127, 100%, 82%);
+  background-color: hsl(127, 100%, 82%);
   color: var(--almost-black);
   border-radius: 0.25rem;
   transition: var(--transtion-300ms);
@@ -284,6 +305,7 @@ main {
   font-size: var(--size-350);
   justify-content: space-between;
 }
+
 .title-label p {
   border-radius: 50%;
   background: var(--green);
@@ -293,36 +315,43 @@ main {
   color: var(--almost-black);
   transition: var(--transtion-300ms);
 }
+
 /* Inputs */
 .RangeInput {
   width: 100%;
   margin-block: 0.25rem 1.5rem;
   transition: var(--transtion-300ms);
 }
+
 .input-wrapper {
   gap: 0.5rem;
   display: flex;
   flex-direction: column;
 }
+
 @media (min-width: 25em) {
   .input-wrapper {
     margin-inline-start: 0.5rem;
   }
 }
+
 .input-sub-wrapper {
   gap: 0.8rem;
   display: flex;
   align-items: center;
   transition: var(--transtion-200ms);
 }
+
 .input-sub-wrapper label {
   font-size: var(--size-300);
   font-weight: var(--fw-600);
   transition: var(--transtion-300ms);
 }
-.input-sub-wrapper > input:checked + label {
+
+.input-sub-wrapper>input:checked+label {
   color: var(--green);
 }
+
 /* Error Message  */
 .error {
   color: var(--red);
@@ -333,14 +362,17 @@ main {
   margin-block: 0.5rem 0.8rem;
   transition: var(--transtion-300ms);
 }
+
 @keyframes revealUP {
   0% {
     opacity: 0;
     transform: translateY(20px);
   }
+
   50% {
     transform: translateY(-5px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0px);
@@ -349,7 +381,7 @@ main {
 
 /* Strength Pills */
 .strength {
-  display: flex; 
+  display: flex;
   align-items: center;
   padding: 1rem 1.5rem;
   border-radius: 0.25rem;
@@ -359,16 +391,18 @@ main {
   background-color: var(--almost-black);
 }
 
-.strength > p {
+.strength>p {
   color: var(--light-gray);
   font-size: var(--size-300);
   font-weight: var(--fw-800);
 }
+
 .strength-wrapper {
   gap: 0.8rem;
   display: flex;
   align-items: center;
 }
+
 .strength-message {
   text-transform: uppercase;
   font-size: var(--size-400);
@@ -376,23 +410,27 @@ main {
   color: var(--almost-white);
   transition: var(--transtion-300ms);
 }
+
 @media (max-width: 25em) {
   .strength {
     padding: 1rem;
   }
+
   .strength-message {
     font-size: var(--size-300);
   }
 }
+
 .strength-pills {
   display: flex;
 }
-.strength-pills > div {
+
+.strength-pills>div {
   width: 8px;
   height: 17px;
   margin-inline-end: .5rem;
   transition: var(--transtion-200ms);
-  border: 1px solid var(--almost-white); 
+  border: 1px solid var(--almost-white);
 }
 
 /* Generate Button  */
@@ -423,47 +461,61 @@ main {
   background-color: transparent;
   transition: var(--transtion-300ms);
 }
+/* For Ripple Effect on Reset Button Only  */
+.btn-reset span {
+  transform: translate(0%, 0%);
+}
 .btn-svg,
 .btn-reset-svg {
   transition: var(--transtion-300ms);
 }
+
 .btn-reset-svg {
   fill: var(--almost-white);
 }
+
 /* Hover States  */
 @media (hover:hover) {
-  .copy-btn:hover + .onmouse-message {
+  .copy-btn:hover+.onmouse-message {
     opacity: 1;
     transform: translateY(0);
   }
+
   .copy-btn:hover {
     transform: scale(1.09) translateY(-2px);
   }
+
   .input-sub-wrapper:hover {
     transform: translateY(-2px);
   }
+
   .btn:hover {
     transform: scale(1.03);
-    background-color:hsl(127, 100%, 72%)
+    background-color: hsl(127, 100%, 72%)
   }
+
   .btn:hover .btn-svg {
     transform: scale(1.05) translateX(3px);
   }
+
   .btn-reset:hover {
     border-color: var(--green);
     color: hsl(127, 100%, 72%);
   }
+
   .btn-reset:hover .btn-reset-svg {
     fill: hsl(127, 100%, 72%);
     transform: scale(1.03) rotate(360deg);
   }
+
   input[type=range]::-webkit-slider-thumb:hover,
   input[type=range]::-webkit-slider-thumb:active {
-  transform: scale(1.05) translateY(-1px);
+    transform: scale(1.05) translateY(-1px);
   }
+
   input[type='range']::-moz-range-thumb:hover,
   input[type=range]::-moz-range-thumb:active {
-  transform: scale(1.05) translateY(-1px);
+    transform: scale(1.05) translateY(-1px);
   }
 }
 
@@ -472,21 +524,28 @@ main {
   --almost-white: var(--red);
   background-color: var(--red);
 }
+
 .bg-orange {
   --almost-white: var(--orange);
   background-color: var(--orange);
 }
+
 .bg-yellow {
   --almost-white: var(--yellow);
   background-color: var(--yellow);
 }
+
 .bg-green {
   --almost-white: var(--green);
   background-color: var(--green);
 }
+
 .no-bg {
   background-color: transparent;
   --almost-white: hsl(252, 11%, 91%);
+}
+.p-1 {
+  padding: 5px 4px;
 }
 /* Range Input And Checkbox Input*/
 input[type=range] {
@@ -501,6 +560,7 @@ input[type=range] {
   border-radius: 50%;
   margin-block-start: 1.4rem;
 }
+
 input[type='range']::-webkit-slider-runnable-track {
   background: linear-gradient(to right, var(--green), var(--green)), var(--almost-black);
   background-size: var(--background-size, 0%) 100%;
@@ -508,6 +568,7 @@ input[type='range']::-webkit-slider-runnable-track {
   border-radius: 1rem;
   height: 0.5rem;
 }
+
 /* For Chrome, Safari Browsers */
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -521,6 +582,7 @@ input[type=range]::-webkit-slider-thumb {
   border: 1.5px solid var(--green);
   transition: var(--transtion-200ms);
 }
+
 input[type=range]::-webkit-slider-thumb:hover,
 input[type=range]::-webkit-slider-thumb:active {
   background-color: var(--almost-black);
@@ -569,9 +631,11 @@ input[type=checkbox] {
   transition: var(--transtion-300ms);
   border: 2px solid var(--almost-white);
 }
+
 input[type=checkbox]:hover {
   border-color: var(--checkbox-green);
 }
+
 input[type=checkbox]::after {
   content: ' ';
   position: relative;
@@ -584,20 +648,23 @@ input[type=checkbox]::after {
   transform: rotate(40deg);
   display: none;
 }
+
 input[type=checkbox]:checked::after {
   display: block;
 }
+
 input[type=checkbox]:checked {
   background-color: var(--checkbox-green);
   color: var(--almost-black);
   border: none;
-} 
+}
 
 /* Ripple Effect */
 .ripples {
   position: relative;
   overflow: hidden;
 }
+
 span {
   border-radius: 50%;
   position: absolute;
@@ -606,12 +673,14 @@ span {
   background: var(--almost-white);
   transform: translate(-50%, -50%);
 }
+
 @keyframes animate-1 {
   0% {
     width: 0px;
     height: 0px;
     opacity: 0.3;
   }
+
   100% {
     width: 500px;
     height: 500px;
@@ -625,22 +694,28 @@ span {
     margin-block: 0.5rem 1rem;
     padding: 0.8rem 0.8rem 0.8rem 1.3rem;
   }
+
   .display-box p {
     font-size: var(--size-600);
   }
+
   .title-label {
     font-size: var(--size-500);
   }
+
   .input-sub-wrapper label {
     font-size: var(--size-400)
   }
+
   .error {
     margin-block: 0.7rem 1rem;
     font-size: var(--size-400);
   }
-  .strength > p {
+
+  .strength>p {
     font-size: var(--size-400);
   }
+
   .btn,
   .btn-reset {
     font-size: var(--size-350);
