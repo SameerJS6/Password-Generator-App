@@ -16,6 +16,7 @@ const Weak = document.querySelector("[data-weak]");
 const Medium = document.querySelector("[data-medium]");
 const Strong = document.querySelector("[data-strong]");
 
+const Allbar = document.querySelectorAll('.All');
 const WeakAll = document.querySelectorAll(".weak");
 const MediumAll = document.querySelectorAll(".medium");
 const StrongAll = document.querySelectorAll(".strong");
@@ -28,10 +29,12 @@ const IncludeNumbersElement = document.getElementById('IncludeNumbers');
 const IncludeSymbolsElement = document.getElementById('IncludeSymbols');
 
 const SubmitButton = document.querySelector('[data-submit-btn]');
+const ResetButton = document.querySelector('[data-resetbtn]');
 
 
 let value;
 value = RangeInput.value;
+
 
 // ASCII CHAR CODES FOR PASSWORD COMBINATION ARRAYS
 const UPPERCASE_CODES = ArrayFromLowToHigh(65, 90);
@@ -54,8 +57,18 @@ Form.addEventListener('submit', e => {
 
     const Password = GeneratePassword(CharacterAmount, includeUppercase, includeLowercase, includeNumbers, includeSymbols)
 
-    PasswordValue.innerText = Password
+    PasswordValue.innerText = Password;
     PasswordValue.style.color = "var(--almost-white)";
+
+    // Checkbox Validation Here Important 
+    if (IncludeUppercaseElement.checked !== true && IncludeLowercaseElement.checked !== true && IncludeNumbersElement.checked !== true && IncludeSymbolsElement.checked !== true) {
+        ErrorMessage.style.visibility = 'visible';
+        PasswordValue.innerText = "Select A Checkbox!!"
+        PasswordValue.style.color = 'hsl(0, 91%, 63%)'
+        ErrorMessage.style.animation = "opacity 350ms ease-in"
+    } else {
+        ErrorMessage.style.visibility = 'hidden';
+    }
 })
 
 // Function to Combine all Character data to form an password 
@@ -91,9 +104,9 @@ input.addEventListener("input", () => setBackgroundSize(input));
 function getBackgroundSize(input) {
     const min = input.min;
     const max = input.max;
-    const value = input.value;
+    const value2 = input.value;
 
-    const size = (value - min) / (max - min) * 100;
+    const size = (value2 - min) / (max - min) * 100;
     return size;
 }
 
@@ -126,17 +139,21 @@ RangeInput.oninput = function() {
     if(value <= 1) {
         StrengthMessage.innerHTML = '';
         TooWeak.classList.remove('bg-red');
+        TooWeak.classList.remove('no-bg')
 
         WeakAll.forEach((weak) => {
             weak.classList.remove('bg-orange')
+            weak.classList.remove('no-bg')
         })
 
         MediumAll.forEach((medium) => {
             medium.classList.remove('bg-yellow')
+            medium.classList.remove('no-bg')
         })
 
         StrongAll.forEach((strong) => {
             strong.classList.remove('bg-green')
+            strong.classList.remove('no-bg')
         })
     } else if(value <= 6) {
         StrengthMessage.innerHTML = 'too weak'
@@ -144,44 +161,53 @@ RangeInput.oninput = function() {
 
         WeakAll.forEach((weak) => {
             weak.classList.remove('bg-orange')
+            weak.classList.remove('no-bg')
         })
 
         MediumAll.forEach((medium) => {
             medium.classList.remove('bg-yellow')
+            medium.classList.remove('no-bg')
         })
 
         StrongAll.forEach((strong) => {
             strong.classList.remove('bg-green')
+            strong.classList.remove('no-bg')
         })
     } else if (value <= 10) {
         StrengthMessage.innerHTML = 'weak';
 
         WeakAll.forEach((weak) => {
             weak.classList.add('bg-orange');
+            weak.classList.remove('no-bg')
         })
 
         MediumAll.forEach((medium) => {
             medium.classList.remove('bg-yellow')
+            medium.classList.remove('no-bg')
         })
 
         StrongAll.forEach((strong) => {
             strong.classList.remove('bg-green')
+            strong.classList.remove('no-bg')
         })
     } else if(value <=15) {
         StrengthMessage.innerHTML = 'medium';
 
         MediumAll.forEach((medium) => {
             medium.classList.add('bg-yellow');
+            medium.classList.remove('no-bg');
         })
         
         StrongAll.forEach((strong) => {
-            strong.classList.remove('bg-green')
+            strong.classList.remove('bg-green');
+            strong.classList.remove('no-bg');
         })
     } else if(value => 16) {
         StrengthMessage.innerHTML = 'strong';
 
         StrongAll.forEach((strong) => {
             strong.classList.add('bg-green')
+            strong.classList.remove('no-bg')
         })
     }
 }
@@ -204,3 +230,22 @@ Ripple.forEach((ripple) => {
         }, 10000);
     });
 });
+
+// Reset Button 
+ResetButton.addEventListener("click", ()=> {
+    ResetAll();
+})
+
+function ResetAll() {
+    RangeInput.value = 0;
+    RangeDisplay.innerText = 0;
+    console.log(RangeInput.value);
+    StrengthMessage.innerHTML = '';
+    ErrorMessage.style.visibility = 'hidden';
+    PasswordValue.innerText = 'P4$5W0rD!JSgT'
+    PasswordValue.style.color = 'var(--light-gray)';
+    input.style.setProperty("--background-size", `0%`);
+    Allbar.forEach((all) => {
+        all.classList.add('no-bg');
+    })
+}
