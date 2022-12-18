@@ -29,7 +29,6 @@ Users should be able to:
 
 ### Screenshot
 
-![](./localhost_5500_%20(4).png)
 ![](./localhost_5500_%20(5).png)
 ![](./localhost_5500_%20(6).png)
 ![](./localhost_5500_%20(7).png)
