@@ -101,4 +101,4 @@ There's just too many to list here. I spent an entire day trying to style that s
 
 ## Author
 
-- Frontend Mentor - [@wesleyjacoby](https://www.frontendmentor.io/profile/SameerJS6)
+- Frontend Mentor - [@SameerJS6](https://www.frontendmentor.io/profile/SameerJS6)
