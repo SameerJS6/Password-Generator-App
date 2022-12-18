@@ -158,29 +158,38 @@ main {
   padding: 1rem;
   color: var(--almost-white);
 }
-@media (max-width: 19em) {
+/* @media (max-width: 19em) {
   main {
     width: 260px;
   }
 }
 @media (min-width: 20em) {
   main {
-    width: 300px;
+    width: 310px;
   }
-}
-@media (min-width: 24em) {
+} */
+/* @media (min-width: 22em) {
   main {
-    width: 400px;
+    width: 100%;
+    max-width: 370px;
+  }
+} */
+@media (max-width: 32em) {
+  main {
+    width: 100%;
+    max-width: 500px;
   }
 }
 @media (min-width: 45em) {
   main {
     width: 500px;
+    /* max-width: 500px; */
   }
 }
 @media (min-width: 87em) {
   main {
     width: 600px;
+    max-width: 600px;
   }
 }
 .main-container {
