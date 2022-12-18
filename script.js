@@ -55,6 +55,7 @@ Form.addEventListener('submit', e => {
     const Password = GeneratePassword(CharacterAmount, includeUppercase, includeLowercase, includeNumbers, includeSymbols)
 
     PasswordValue.innerText = Password
+    PasswordValue.style.color = "var(--almost-white)";
 })
 
 // Function to Combine all Character data to form an password 
@@ -81,6 +82,41 @@ function ArrayFromLowToHigh(low, high) {
     }
     return Array
 } 
+
+
+// Slider Progress Bar Color Calculation Function 
+setBackgroundSize(input);
+input.addEventListener("input", () => setBackgroundSize(input));
+
+function getBackgroundSize(input) {
+    const min = input.min;
+    const max = input.max;
+    const value = input.value;
+
+    const size = (value - min) / (max - min) * 100;
+    return size;
+}
+
+function setBackgroundSize(input) {
+    input.style.setProperty("--background-size", `${getBackgroundSize(input)}%`);
+}
+
+// Copy Function 
+CopyButton.addEventListener("click", CopyFunction);
+
+function CopyFunction() {
+    const copy = navigator.clipboard;
+    copy.writeText(PasswordValue.innerText).then(() => CopyMessage.classList.remove("none"));
+
+    CopyMark.classList.add('none');
+    CheckMark.classList.remove('none');
+
+    setTimeout(() => {
+        CopyMessage.classList.add("none");
+        CopyMark.classList.remove('none');
+        CheckMark.classList.add('none');
+    }, 1000);   
+}
 
 // Range Display 
 RangeInput.oninput = function() {
@@ -149,42 +185,6 @@ RangeInput.oninput = function() {
         })
     }
 }
-
-
-// Slider Progress Bar Color Calculation Function 
-setBackgroundSize(input);
-input.addEventListener("input", () => setBackgroundSize(input));
-
-function getBackgroundSize(input) {
-    const min = input.min;
-    const max = input.max;
-    const value = input.value;
-
-    const size = (value - min) / (max - min) * 100;
-    return size;
-}
-
-function setBackgroundSize(input) {
-    input.style.setProperty("--background-size", `${getBackgroundSize(input)}%`);
-}
-
-// Copy Function 
-CopyButton.addEventListener("click", CopyFunction);
-
-function CopyFunction() {
-    const copy = navigator.clipboard;
-    copy.writeText(PasswordValue.innerText).then(() => CopyMessage.classList.remove("none"));
-
-    CopyMark.classList.add('none');
-    CheckMark.classList.remove('none');
-
-    setTimeout(() => {
-        CopyMessage.classList.add("none");
-        CopyMark.classList.remove('none');
-        CheckMark.classList.add('none');
-    }, 1000);   
-}
-
 
 // Ripple Effect 
 const Ripple = document.querySelectorAll('.ripples');

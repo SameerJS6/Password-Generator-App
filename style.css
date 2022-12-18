@@ -217,6 +217,7 @@ main {
 }
 .display-box p {
   color: var(--light-gray);
+  /* color: var(--almost-white); */
   font-size: var(--size-500);
   font-weight: var(--fw-800);
   transition: var(--transtion-300ms);
