@@ -166,12 +166,17 @@ main {
 }
 @media (min-width: 20em) {
   main {
-    width: 310px;
+    width: 315px;
   }
 } 
- @media (min-width: 22em) {
+ @media (min-width: 23.3em) {
   main {
     width: 370px;
+  }
+}
+ @media (min-width: 25em) {
+  main {
+    width: 400px;
   }
 }
 @media (min-width: 31em) {
