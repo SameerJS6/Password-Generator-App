@@ -152,13 +152,14 @@ body {
   font-weight: var(--fw-800);
   margin-block-start: 1rem;
 }
+
 main {
   width: 100%;
   z-index: 10;
   padding: 1rem;
   color: var(--almost-white);
 }
-/* @media (max-width: 19em) {
+@media (max-width: 19em) {
   main {
     width: 260px;
   }
@@ -167,29 +168,25 @@ main {
   main {
     width: 310px;
   }
-} */
-/* @media (min-width: 22em) {
+} 
+ @media (min-width: 22em) {
   main {
-    width: 100%;
-    max-width: 370px;
+    width: 370px;
   }
-} */
-@media (max-width: 32em) {
+}
+@media (min-width: 31em) {
   main {
-    width: 100%;
-    max-width: 500px;
+    width: 500px;
   }
 }
 @media (min-width: 45em) {
   main {
     width: 500px;
-    /* max-width: 500px; */
   }
 }
 @media (min-width: 87em) {
   main {
     width: 600px;
-    max-width: 600px;
   }
 }
 .main-container {
@@ -357,11 +354,7 @@ main {
   transition: var(--transtion-300ms);
   background-color: var(--almost-black);
 }
-@media (max-width: 25em) {
-  .strength {
-    padding: 1rem;
-  }
-}
+
 .strength > p {
   color: var(--light-gray);
   font-size: var(--size-300);
@@ -378,6 +371,14 @@ main {
   font-weight: var(--fw-700);
   color: var(--almost-white);
   transition: var(--transtion-300ms);
+}
+@media (max-width: 25em) {
+  .strength {
+    padding: 1rem;
+  }
+  .strength-message {
+    font-size: var(--size-300);
+  }
 }
 .strength-pills {
   display: flex;
