@@ -326,13 +326,12 @@ main {
 /* Error Message  */
 .error {
   color: var(--red);
+  visibility: hidden;
   text-align: center;
-  /* visibility: hidden; */
   font-size: var(--size-300);
   font-weight: var(--fw-700);
   margin-block: 0.5rem 0.8rem;
   transition: var(--transtion-300ms);
-  animation: revealUP 350ms ease-out forwards alternate;
 }
 @keyframes revealUP {
   0% {
@@ -350,11 +349,11 @@ main {
 
 /* Strength Pills */
 .strength {
-  display: flex;
+  display: flex; 
   align-items: center;
   padding: 1rem 1.5rem;
-  margin-block: 0rem 1.5rem;
   border-radius: 0.25rem;
+  margin-block: 0rem 1.5rem;
   justify-content: space-between;
   transition: var(--transtion-300ms);
   background-color: var(--almost-black);
@@ -413,12 +412,23 @@ main {
 }
 
 .btn-reset {
-  color: var(--green);
+  gap: .5rem;
+  display: flex;
+  align-items: center;
   border-radius: 0.25rem;
+  justify-content: center;
   margin-block-start: .5rem;
+  color: var(--almost-white);
   border: 2px solid transparent;
   background-color: transparent;
   transition: var(--transtion-300ms);
+}
+.btn-svg,
+.btn-reset-svg {
+  transition: var(--transtion-300ms);
+}
+.btn-reset-svg {
+  fill: var(--almost-white);
 }
 /* Hover States  */
 @media (hover:hover) {
@@ -436,8 +446,16 @@ main {
     transform: scale(1.03);
     background-color:hsl(127, 100%, 72%)
   }
+  .btn:hover .btn-svg {
+    transform: scale(1.05) translateX(3px);
+  }
   .btn-reset:hover {
     border-color: var(--green);
+    color: hsl(127, 100%, 72%);
+  }
+  .btn-reset:hover .btn-reset-svg {
+    fill: hsl(127, 100%, 72%);
+    transform: scale(1.03) rotate(360deg);
   }
   input[type=range]::-webkit-slider-thumb:hover,
   input[type=range]::-webkit-slider-thumb:active {
@@ -466,7 +484,10 @@ main {
   --almost-white: var(--green);
   background-color: var(--green);
 }
-
+.no-bg {
+  background-color: transparent;
+  --almost-white: hsl(252, 11%, 91%);
+}
 /* Range Input And Checkbox Input*/
 input[type=range] {
   -webkit-appearance: none;
