@@ -426,6 +426,7 @@ main {
 
 .btn,
 .btn-reset {
+  opacity: 1;
   width: 100%;
   border: none;
   padding: 1rem;
@@ -678,6 +679,14 @@ span {
 }
 
 /* Media Quire */
+@media (min-width: 35em) {
+  .title-label {
+    font-size: var(--size-400);
+  }
+  .input-sub-wrapper label {
+    font-size: var(--size-350);
+  }
+}
 @media (min-width: 60em) {
   .display-wrapper {
     margin-block: 0.5rem 1rem;

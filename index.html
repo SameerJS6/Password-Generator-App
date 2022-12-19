@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="Animated.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 
@@ -33,7 +34,7 @@
 
     <!-- Main Content Starts  -->
     <h2 class="title">Password Generator</h2>
-    <main>
+    <main class="main">
         <!-- Display Container  -->
         <div class="display-wrapper">
             <div class="display-box">
@@ -68,22 +69,22 @@
                 <input class="RangeInput" type="range" min="1" max="25" value="0" steps="1" id="InputNumberRange">
 
                 <div class="input-wrapper">
-                    <div class="input-sub-wrapper">
+                    <div class="input-sub-wrapper input-link">
                         <input type="checkbox" id="IncludeUppercase">
                         <label for="IncludeUppercase">Include Uppercase Letters</label>
                     </div>
 
-                    <div class="input-sub-wrapper">
+                    <div class="input-sub-wrapper input-link">
                         <input type="checkbox" id="IncludeLowercase">
                         <label for="IncludeLowercase">Include Lowercase Letters</label>
                     </div>
 
-                    <div class="input-sub-wrapper">
+                    <div class="input-sub-wrapper input-link">
                         <input type="checkbox" id="IncludeNumbers">
                         <label for="IncludeNumbers">Include Numbers</label>
                     </div>
 
-                    <div class="input-sub-wrapper">
+                    <div class="input-sub-wrapper input-link">
                         <input type="checkbox" id="IncludeSymbols">
                         <label for="IncludeSymbols">Include Symbols</label>
                     </div>

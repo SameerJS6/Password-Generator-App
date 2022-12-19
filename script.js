@@ -265,3 +265,9 @@ Ripple.forEach((ripple) => {
     }, 10000);
   });
 });
+
+
+// GSAP Animations
+gsap.from('.main', { opacity: 0, y: '100%', duration: 1, ease: 'back.out(1)'})
+gsap.from('.input-link', { duration: .5, delay: 0.5, stagger: .25, opacity: 0, ease: 'power3.out'})
+gsap.from('.btn-reset', { duration: .25, delay: .25, opacity: 0, ease: 'power3.out'})
