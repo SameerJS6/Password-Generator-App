@@ -28,17 +28,6 @@
   --fw-800: 800;
 }
 
-.DarkMode {
-  --dark-gray: hsl(248, 10%, 15%);
-  --light-gray: hsl(251, 9%, 53%);
-  --almost-white: hsl(252, 11%, 91%);
-  --almost-black: hsl(248, 15%, 11%);
-  --green: hsl(127, 100%, 82%);
-  --red: hsl(0, 91%, 63%);
-  --orange: hsl(13, 95%, 66%);
-  --yellow: hsl(42, 91%, 68%);
-}
-
 .none {
   display: none;
 }
