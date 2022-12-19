@@ -1,6 +1,8 @@
-# PassGen - Password Generator App 
+# PassGen - Password Generator App
 
 This is PassGen - A Solid Password Generator App.
+
+- A Password generator that creates random or customized passwords for users. It helps users create stronger passwords that provide greater security for a given type of access.
 
 ## Table of contents
 
@@ -17,7 +19,7 @@ This is PassGen - A Solid Password Generator App.
 
 ## Overview
 
-### The challenge
+### The Challenges
 
 Users should be able to:
 
@@ -29,9 +31,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./localhost_5500_%20(5).png)
-![](./localhost_5500_%20(6).png)
-![](./localhost_5500_%20(7).png)
+![](./preview.png)
+![](./error-preview.png)
 
 ### Links
 
@@ -40,65 +41,78 @@ Users should be able to:
 
 ## My process
 
+- The first step was very clear as it was studying the given design and the problems that I am about to face.
+- Once that was done, started constructing the HTML Code and then dividing the Styling into smaller parts and started styling with the title, display box, and then the main container.
+- Styling the whole app took less than 1 day excluding the Slider progress bar and the Checkboxes which took nearly 1.5 - 2 days to style.
+- After that, I started with Javascript which was pretty tough For example:- The Checkboxes condition where at least one checkbox should be checked was hard, and then reset button scripting, etc.
+- The Javascript part took nearly 1.5 days of mainly googling problems and watching youtube tutorials to implement.
+- But all of that was an experience to learn.
+
 ### Built with
 
 - Flexbox
 - JavaScript
-- Semantic HTML5 markup
 - CSS custom properties
 - Mobile-first workflow
-
+- Semantic HTML5 markup
 
 ### What I learned
 
-Where do I start! This challenge was way above my skill level, but the app just looked really cool and I couldn't resist trying it out. I thought it would be a great way to practice using JavaScript arrays, but I found the CSS way more challenging!
+- Where do I start? This challenge was way above my skill level, but the app just looked cool and I couldn't resist trying it out. I thought it would be a great way to practice using JavaScript arrays, and functions but I found the CSS way more challenging!
 
-I learnt that not all browsers are created equally! The app looks good on Chrome, Firefox and Edge now.
+- For Example:- Styling the Checkboxes and Range or Progress bar was one of the toughest things.
 
-Styling the slider was a huge headache, especially getting the background behind the thumb a different color to the background ahead of the thumb. This was the code that got it working:
+- I learned that not all browsers are created equally! The app looks good on Chrome, Firefox, and Edge now.
+
+- (Sidenote:- Google Chrome is the best browser to develop as it is great in Chrome.)
+
+- Definitely, learned more about Handling the input styles in CSS and Much more Arrays, Especially more Functions in JS.
+- Learned a new way to generate random Passwords by using ASCII Char Codes Stored in an Array.
+
+- Styling the slider was a huge headache, especially getting the background behind the thumb a different color than the background ahead of the thumb. This was the code that got it working:
 
 ```js
-numberOutput.innerText = slider.value;
+let value;
+value = RangeInput.value;
 
-slider.oninput = function () {
-    numberOutput.textContent = this.value;
+RangeInput.oninput = function () {
+  value = RangeInput.value;
+  RangeDisplay.innerText = value;
+};
+
+SetBackgroundSize(input);
+
+function SetBackgroundSize(input) {
+  input.style.setProperty("--background-size", `${GetBackgroundSize(input)}%`);
 }
 
-setBackgroundSize(input);
+input.addEventListener("input", () => SetBackgroundSize(input));
 
-function setBackgroundSize(input) {
-    input.style.setProperty("--background-size", `${getBackgroundSize(input)}%`);
-}
+function GetBackgroundSize(input) {
+  const min = +input.min;
+  const max = +input.max;
+  const value = +input.value;
 
-input.addEventListener("input", () => setBackgroundSize(input));
+  const size = ((value - min) / (max - min)) * 100;
 
-function getBackgroundSize(input) {
-    const min = +input.min || 1;
-    const max = +input.max || 20;
-    const value = +input.value;
-
-    const size = (value - min) / (max - min) * 100;
-
-    return size;
+  return size;
 }
 ```
 
-Using the zxcvbn library was a huge help and time saver and made the project more realy world friendly:
+- I still not find myself getting comfortable using functions.
 
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
-```
-
-I find myself getting more comfortable using functions as well.
+- All an over this was a really tough and challenging one for me.
 
 ### Continued development
 
-There's obviously still an insane amount to learn, but I'll keep doing more challenges so I can be presented with a multiple of different problems to try solve.
+- There's obviously still an insane amount to learn, but I'll keep doing more challenges so I can be presented with a multiple of different problems to try solve.
 
 ### Useful resources
 
-There's just too many to list here. I spent an entire day trying to style that slider. The code above shows how I finally got it to work.
+- There are just too many to list here. I spent around 1.5 days trying to style that slider. The code above shows how I finally got it to work.
+- And Not only that nearly took me 3 days to complete this one.
 
 ## Author
 
 - Frontend Mentor - [@SameerJS6](https://www.frontendmentor.io/profile/SameerJS6)
+- Github - [@SameerJS6](https://github.com/SameerJS6/)
