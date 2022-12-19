@@ -42,9 +42,13 @@ Users should be able to:
 ## My process
 
 - The first step was very clear as it was studying the given design and the problems that I am about to face.
+
 - Once that was done, started constructing the HTML Code and then dividing the Styling into smaller parts and started styling with the title, display box, and then the main container.
+
 - Styling the whole app took less than 1 day excluding the Slider progress bar and the Checkboxes which took nearly 1.5 - 2 days to style.
+
 - After that, I started with Javascript which was pretty tough For example:- The Checkboxes condition where at least one checkbox should be checked was hard, and then reset button scripting, etc.
+
 - The Javascript part took nearly 1.5 days of mainly googling problems and watching youtube tutorials to implement.
 - But all of that was an experience to learn.
 
