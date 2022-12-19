@@ -58,8 +58,8 @@ Users should be able to:
 
 - Flexbox
 - JavaScript
-- CSS custom properties
 - Mobile-first workflow
+- CSS custom properties
 - Semantic HTML5 markup
 
 ### What I learned
