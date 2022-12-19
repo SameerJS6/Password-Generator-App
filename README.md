@@ -28,6 +28,8 @@ Users should be able to:
 - See a strength rating for their generating or generated password.
 - See hover and focus states for all interactive elements on the page.
 - View the optimal layout for the interface depending on their device's screen size.
+- (OPTIONAL):- Add a background animation to make the app more appealing to users.
+- Loading Animations and small but some visual changes when the user interacts.
 
 ### Screenshot
 
