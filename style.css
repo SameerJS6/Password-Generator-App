@@ -788,8 +788,8 @@ span {
 }
 
 .tracking-in-expand-fwd-top {
-  animation: tracking-in-expand-fwd-top 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-  animation-delay: 0.3s;
+  animation: tracking-in-expand-fwd-top 1.3s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  /* animation-delay: 0.3s; */
 }
 
 @keyframes tracking-in-expand-fwd-top {
@@ -828,7 +828,7 @@ span {
 }
 
 .fade-in {
-  animation: fade-in-bck 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-bck 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   animation-delay: 0.3s;
 }
 
