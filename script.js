@@ -282,6 +282,6 @@ Allbar.forEach((bar, i) => {
   if(bar.style.animation) {
     bar.style.animation = ''
   } else {
-    bar.style.animation = `navSlide 1s ease ${i / 4}s`
+    bar.style.animation = `navSlide 1s ease ${i / 5}s`
   }
 })
