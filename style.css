@@ -749,18 +749,18 @@ span {
 }
 
 .tracking-in-expand {
-  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-  animation-delay: 0.5s;
+  animation: tracking-in-expand 1.3s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  /* animation-delay: 0.5s; */
 }
 
 @keyframes tracking-in-expand {
   0% {
-    letter-spacing: -0.5em;
+    letter-spacing: -0.6em;
     opacity: 0;
   }
 
   40% {
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   100% {
@@ -770,7 +770,7 @@ span {
 
 .slide-in-elliptic-top-fwd {
   animation: slide-in-elliptic-top-fwd 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation-delay: 0.3s;
+  /* animation-delay: 0.3s; */
 }
 
 @keyframes slide-in-elliptic-top-fwd {
@@ -829,12 +829,12 @@ span {
 
 .fade-in {
   animation: fade-in-bck 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation-delay: 0.3s;
+  /* animation-delay: 0.3s; */
 }
 
 @keyframes fade-in-bck {
   0% {
-    transform: translateZ(40px);
+    transform: translateZ(50px);
     opacity: 0;
   }
 
@@ -844,20 +844,7 @@ span {
   }
 }
 
-.fade {
-  animation: fade 1s ease both;
-  animation: 0.25s;
-}
 
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
 
 .overflow-animate {
   animation: overflow 4s;
