@@ -274,7 +274,7 @@ Links.forEach((link, index) => {
   if(link.style.animation) {
     link.style.animation = ''
   } else {
-    link.style.animation = `navSlide 0.8s ease ${index / 4}s`;
+    link.style.animation = `navSlide 0.8s ease ${index / 7}s`;
   }
 });
 

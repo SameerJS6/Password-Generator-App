@@ -13,10 +13,10 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="overflow-animate ">
 
     <!-- Background Animation  -->
-    <div class="area">
+    <div class="area fade">
         <ul class="circles">
             <li></li>
             <li></li>
@@ -62,10 +62,10 @@
         <div class="main-container">
             <div class="title-label">
                 <h4>Character Length</h4>
-                <p data-range-number>0</p>
+                <p data-range-number class="fade-in">0</p>
             </div>
             <form data-form action="">
-                <input class="RangeInput" type="range" min="1" max="25" value="0" steps="1" id="InputNumberRange">
+                <input class="RangeInput fade-in" type="range" min="1" max="25" value="0" steps="1" id="InputNumberRange">
 
                 <div class="input-wrapper">
                     <div class="input-sub-wrapper link">
@@ -106,7 +106,7 @@
                     </div>
                 </div>
 
-                <button data-submit-btn type="submit" class="btn | ripples">
+                <button data-submit-btn type="submit" class="btn | ripples slide-in-blurred-bottom">
                     GENERATE
                     <svg class="btn-svg" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#24232C"
@@ -114,7 +114,7 @@
                     </svg>
                 </button>
 
-                <button data-resetbtn type="reset" class="btn-reset | ripples">
+                <button data-resetbtn type="reset" class="btn-reset | ripples slide-in-blurred-bottom">
                     Reset
                     <svg class="btn-reset-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24">
