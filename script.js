@@ -266,5 +266,22 @@ Ripple.forEach((ripple) => {
   });
 });
 
+// All the Animations
 
+const Links = document.querySelectorAll(".link");
 
+Links.forEach((link, index) => {
+  if(link.style.animation) {
+    link.style.animation = ''
+  } else {
+    link.style.animation = `navSlide 0.8s ease ${index / 4}s`;
+  }
+});
+
+Allbar.forEach((bar, i) => {
+  if(bar.style.animation) {
+    bar.style.animation = ''
+  } else {
+    bar.style.animation = `navSlide 1s ease ${i / 4}s`
+  }
+})
